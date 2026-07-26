@@ -1,0 +1,13 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1100' height='800' viewBox='0 0 1100 800'>
+  <rect width='1100' height='800' fill='#F7F5F1'/>
+  <rect x='24' y='24' width='1052' height='752' fill='none' stroke='#7A8870' stroke-width='1.5' opacity='0.55'/>
+  <rect x='36' y='36' width='1028' height='728' fill='none' stroke='#5D6756' stroke-width='0.5' opacity='0.35'/>
+  <text x='550' y='224.00000000000003' text-anchor='middle' font-family='Georgia, serif' font-size='22' fill='#5D6756' letter-spacing='4'>СЕРТИФИКАТ</text>
+  <line x1='308.00000000000006' y1='272' x2='792' y2='272' stroke='#7A8870' stroke-width='1' opacity='0.5'/>
+  <text x='550' y='384' text-anchor='middle' font-family='Georgia, serif' font-size='28' fill='#2B2B2B'>
+    <tspan x='550' dy='0'>1 ступень</tspan>
+    <tspan x='550' dy='36'>гештальт-терапии</tspan>
+  </text>
+  <text x='550' y='576' text-anchor='middle' font-family='Georgia, serif' font-size='18' fill='#666666'>2023</text>
+  <text x='550' y='656' text-anchor='middle' font-family='Georgia, serif' font-size='14' fill='#7A8870' letter-spacing='2'>Нгуен-Красильникова А. Ш.</text>
+</svg>

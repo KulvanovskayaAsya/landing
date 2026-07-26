@@ -1,0 +1,106 @@
+---
+import { site } from '../data/site'
+
+const credentials = [
+	'Психолог',
+	'Гештальт-терапевт',
+	'Врач психиатр-нарколог',
+	'Психотерапевт',
+]
+---
+
+<section
+	class="relative overflow-hidden"
+	aria-labelledby="hero-heading"
+>
+	<div class="container-narrow relative">
+		<div
+			class="grid min-h-[100svh] items-center gap-10 py-16 md:grid-cols-2 md:gap-16 md:py-20 lg:gap-20"
+		>
+			<div class="order-2 md:order-1">
+				<p
+					class="mb-5 text-xs font-medium uppercase tracking-[0.22em] text-[var(--color-accent-dark)]"
+				>
+					Частная психотерапевтическая практика
+				</p>
+
+				<h1
+					id="hero-heading"
+					class="max-w-[14ch] text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.08] text-[var(--color-text)]"
+				>
+					{site.name}
+				</h1>
+
+				<ul
+					class="mt-7 flex flex-wrap gap-x-3 gap-y-2 text-[0.9375rem] text-[var(--color-muted)]"
+					aria-label="Квалификации"
+				>
+					{
+						credentials.map((item, index) => (
+							<li class="flex items-center gap-3">
+								{index > 0 && (
+									<span
+										class="hidden h-1 w-1 rounded-full bg-[var(--color-accent)] sm:inline-block"
+										aria-hidden="true"
+									/>
+								)}
+								<span>{item}</span>
+							</li>
+						))
+					}
+				</ul>
+
+				<p class="mt-8 max-w-[36rem] text-lg leading-relaxed text-[var(--color-muted)]">
+					Помогаю разобраться в себе, справиться с тревогой и кризисами,
+					выстроить более устойчивые отношения с собой и окружающими.
+				</p>
+
+				<p
+					class="mt-6 max-w-[34rem] border-l-2 border-[var(--color-accent)] pl-4 text-[0.9375rem] leading-relaxed text-[var(--color-text)]"
+				>
+					Медицинское образование и специализация по клинической
+					психотерапии — основа работы с запросами высокой сложности.
+				</p>
+
+				<div class="mt-10 flex flex-wrap gap-3">
+					<a
+						class="btn btn-primary"
+						href={site.telegram}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Записаться в Telegram"
+					>
+						Записаться в Telegram
+					</a>
+					<a
+						class="btn btn-secondary"
+						href={site.instagram}
+						target="_blank"
+						rel="noopener noreferrer"
+						aria-label="Открыть Instagram"
+					>
+						Instagram
+					</a>
+				</div>
+			</div>
+
+			<div class="order-1 md:order-2">
+				<figure class="relative mx-auto max-w-md md:max-w-none">
+					<div
+						class="overflow-hidden rounded-[1.25rem] bg-[var(--color-surface)]"
+					>
+						<img
+							src="/images/portraits/hero.jpg"
+							alt={`Портрет — ${site.name}`}
+							width="900"
+							height="1200"
+							class="aspect-[3/4] h-auto w-full object-cover"
+							fetchpriority="high"
+							decoding="async"
+						/>
+					</div>
+				</figure>
+			</div>
+		</div>
+	</div>
+</section>

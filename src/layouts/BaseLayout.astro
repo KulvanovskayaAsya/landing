@@ -1,0 +1,106 @@
+---
+import '../styles/global.css'
+import { site } from '../data/site'
+
+interface Props {
+	title?: string
+	description?: string
+}
+
+const {
+	title = `${site.shortName} — ${site.title}`,
+	description = site.description,
+} = Astro.props
+
+const canonical = new URL(Astro.url.pathname, site.url).toString()
+const ogImage = new URL('/images/portraits/hero.svg', site.url).toString()
+
+const jsonLd = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'Person',
+		name: site.name,
+		jobTitle: [
+			'Психолог',
+			'Гештальт-терапевт',
+			'Врач психиатр-нарколог',
+			'Психотерапевт',
+		],
+		description: site.description,
+		url: site.url,
+		image: ogImage,
+		sameAs: [site.telegram, site.instagram],
+		address: {
+			'@type': 'PostalAddress',
+			addressLocality: site.city,
+			addressCountry: site.country,
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'MedicalBusiness',
+		name: `Частная практика — ${site.shortName}`,
+		description: site.description,
+		url: site.url,
+		image: ogImage,
+		medicalSpecialty: 'Psychiatric',
+		priceRange: 'BYN',
+		address: {
+			'@type': 'PostalAddress',
+			addressLocality: site.city,
+			addressCountry: site.country,
+		},
+		founder: {
+			'@type': 'Person',
+			name: site.name,
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'Psychologist',
+		name: site.name,
+		description: site.description,
+		url: site.url,
+		image: ogImage,
+		sameAs: [site.telegram, site.instagram],
+	},
+]
+---
+
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#F7F5F1" />
+		<meta name="color-scheme" content="light" />
+
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="author" content={site.name} />
+		<link rel="canonical" href={canonical} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content={site.locale} />
+		<meta property="og:url" content={canonical} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:site_name" content={site.shortName} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:alt" content={`Портрет — ${site.name}`} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		<meta name="twitter:image:alt" content={`Портрет — ${site.name}`} />
+
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+	</head>
+	<body>
+		<a class="skip-link" href="#main">Перейти к содержимому</a>
+		<slot />
+	</body>
+</html>

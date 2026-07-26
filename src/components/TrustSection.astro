@@ -1,0 +1,68 @@
+---
+const items = [
+	{
+		title: 'Высшее медицинское образование',
+		text: 'Клиническая база, необходимая для точной оценки состояния и безопасной работы.',
+	},
+	{
+		title: 'Более 500 часов личной терапии',
+		text: 'Глубокая личная проработка как этическая и профессиональная основа практики.',
+	},
+	{
+		title: 'Более 300 часов супервизии',
+		text: 'Регулярная профессиональная рефлексия и поддержка качества терапевтической работы.',
+	},
+	{
+		title: 'Гештальт-подход',
+		text: 'Работа с контактом, осознаванием и актуальным опытом в настоящем моменте.',
+	},
+	{
+		title: 'Клиническая психотерапия',
+		text: 'Сочетание психотерапевтических методов с пониманием психических процессов.',
+	},
+	{
+		title: 'Практика врача-психотерапевта',
+		text: 'Медицинская ответственность и этика в сопровождении сложных запросов.',
+	},
+]
+---
+
+<section
+	id="trust"
+	class="section-space bg-[var(--color-surface)]"
+	aria-labelledby="trust-heading"
+>
+	<div class="container-narrow">
+		<header class="max-w-2xl">
+			<h2 id="trust-heading" class="section-title">
+				Основа профессионального подхода
+			</h2>
+			<p class="section-lead">
+				Доверие формируется не обещаниями, а уровнем подготовки,
+				этичностью и устойчивостью практики.
+			</p>
+		</header>
+
+		<ul
+			class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+			role="list"
+		>
+			{
+				items.map((item) => (
+					<li class="rounded-[var(--radius-soft)] border border-[color-mix(in_srgb,var(--color-text)_8%,transparent)] bg-[var(--color-bg)] p-7 transition-colors duration-300 hover:border-[color-mix(in_srgb,var(--color-accent)_45%,transparent)]">
+						<div
+							class="mb-5 h-px w-10 bg-[var(--color-accent)]"
+							aria-hidden="true"
+						/>
+						<h3 class="font-display text-xl leading-snug text-[var(--color-text)]">
+							{item.title}
+						</h3>
+						<p class="mt-3 text-[0.9375rem] leading-relaxed text-[var(--color-muted)]">
+							{item.text}
+						</p>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+</section>

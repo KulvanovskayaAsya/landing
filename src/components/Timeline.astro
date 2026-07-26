@@ -1,0 +1,48 @@
+---
+import { education } from '../data/education'
+---
+
+<section
+	id="education"
+	class="section-space"
+	aria-labelledby="education-heading"
+>
+	<div class="container-narrow">
+		<header class="max-w-2xl">
+			<h2 id="education-heading" class="section-title">
+				Образование и квалификация
+			</h2>
+			<p class="section-lead">
+				Последовательный путь медицинской и психотерапевтической подготовки.
+			</p>
+		</header>
+
+		<ol class="relative mt-14 space-y-0" aria-label="Хронология образования">
+			{
+				education.map((item) => (
+					<li class="relative grid gap-4 border-t border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] py-8 md:grid-cols-[10rem_1fr] md:gap-10 lg:grid-cols-[12rem_1fr]">
+						<div class="flex items-start gap-4 md:block">
+							<span
+								class="mt-2 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--color-accent)] md:absolute md:left-0 md:mt-2 md:hidden"
+								aria-hidden="true"
+							/>
+							<p class="font-display text-xl text-[var(--color-accent-dark)] md:text-2xl">
+								{item.period}
+							</p>
+						</div>
+						<div>
+							<h3 class="text-xl text-[var(--color-text)] md:text-2xl">
+								{item.title}
+							</h3>
+							{item.description && (
+								<p class="mt-2 max-w-[36rem] text-[0.975rem] text-[var(--color-muted)]">
+									{item.description}
+								</p>
+							)}
+						</div>
+					</li>
+				))
+			}
+		</ol>
+	</div>
+</section>

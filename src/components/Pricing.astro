@@ -1,0 +1,53 @@
+---
+const prices = [
+	{
+		title: 'Индивидуальная консультация',
+		price: '150 BYN',
+		duration: '50 минут',
+	},
+	{
+		title: 'Групповая консультация',
+		price: '100 BYN',
+		duration: '50 минут',
+	},
+]
+---
+
+<section
+	id="pricing"
+	class="section-space bg-[var(--color-surface)]"
+	aria-labelledby="pricing-heading"
+>
+	<div class="container-narrow">
+		<header class="mx-auto max-w-2xl text-center">
+			<h2 id="pricing-heading" class="section-title">Стоимость</h2>
+			<p class="section-lead mx-auto">
+				Прозрачные условия. Формат и длительность работы обсуждаются
+				индивидуально.
+			</p>
+		</header>
+
+		<ul
+			class="mx-auto mt-12 grid max-w-3xl gap-5 md:grid-cols-2"
+			role="list"
+		>
+			{
+				prices.map((item) => (
+					<li class="rounded-[1rem] bg-[var(--color-bg)] p-8 text-center md:p-10">
+						<h3 class="font-display text-2xl text-[var(--color-text)]">
+							{item.title}
+						</h3>
+						<p class="mt-6 font-display text-4xl text-[var(--color-accent-dark)] md:text-5xl">
+							{item.price}
+						</p>
+						<p class="mt-3 text-[var(--color-muted)]">{item.duration}</p>
+					</li>
+				))
+			}
+		</ul>
+
+		<p class="mt-8 text-center text-[0.975rem] text-[var(--color-muted)]">
+			Возможны персональные скидки.
+		</p>
+	</div>
+</section>

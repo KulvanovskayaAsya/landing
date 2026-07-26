@@ -1,0 +1,68 @@
+---
+import { site } from '../data/site'
+---
+
+<section
+	id="contact"
+	class="section-space"
+	aria-labelledby="cta-heading"
+>
+	<div class="container-narrow">
+		<div
+			class="rounded-[1.5rem] bg-[var(--color-surface)] px-8 py-16 text-center md:px-16 md:py-20"
+		>
+			<h2
+				id="cta-heading"
+				class="mx-auto max-w-[18ch] font-display text-[clamp(1.875rem,4vw,3rem)] leading-[1.15] text-[var(--color-text)]"
+			>
+				Иногда первый шаг — самый сложный.
+			</h2>
+
+			<p
+				class="mx-auto mt-7 max-w-[36rem] text-lg leading-relaxed text-[var(--color-muted)]"
+			>
+				Если вы чувствуете, что пришло время разобраться в происходящем,
+				я буду рада сопровождать вас в этом процессе.
+			</p>
+
+			<div class="mt-10 flex flex-wrap justify-center gap-3">
+				<a
+					class="btn btn-primary"
+					href={site.telegram}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Написать в Telegram"
+				>
+					Telegram
+				</a>
+				<a
+					class="btn btn-secondary"
+					href={site.instagram}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Открыть Instagram"
+				>
+					Instagram
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<footer class="pb-10 pt-2">
+	<div class="container-narrow">
+		<hr class="divider mb-8" />
+		<div
+			class="flex flex-col gap-3 text-sm text-[var(--color-muted)] md:flex-row md:items-center md:justify-between"
+		>
+			<p>
+				<span class="text-[var(--color-text)]">{site.shortName}</span>
+				— частная психотерапевтическая практика
+			</p>
+			<p>
+				<span class="sr-only">Год:</span>
+				© {new Date().getFullYear()}
+			</p>
+		</div>
+	</div>
+</footer>

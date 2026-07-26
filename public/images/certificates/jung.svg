@@ -1,0 +1,13 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1120' height='820' viewBox='0 0 1120 820'>
+  <rect width='1120' height='820' fill='#F7F5F1'/>
+  <rect x='24' y='24' width='1072' height='772' fill='none' stroke='#7A8870' stroke-width='1.5' opacity='0.55'/>
+  <rect x='36' y='36' width='1048' height='748' fill='none' stroke='#5D6756' stroke-width='0.5' opacity='0.35'/>
+  <text x='560' y='229.60000000000002' text-anchor='middle' font-family='Georgia, serif' font-size='22' fill='#5D6756' letter-spacing='4'>СЕРТИФИКАТ</text>
+  <line x1='313.6' y1='278.8' x2='806.4' y2='278.8' stroke='#7A8870' stroke-width='1' opacity='0.5'/>
+  <text x='560' y='393.59999999999997' text-anchor='middle' font-family='Georgia, serif' font-size='28' fill='#2B2B2B'>
+    <tspan x='560' dy='0'>Аналитическая психотерапия</tspan>
+    <tspan x='560' dy='36'>К.Г. Юнга</tspan>
+  </text>
+  <text x='560' y='590.4' text-anchor='middle' font-family='Georgia, serif' font-size='18' fill='#666666'>2028</text>
+  <text x='560' y='672.4' text-anchor='middle' font-family='Georgia, serif' font-size='14' fill='#7A8870' letter-spacing='2'>Нгуен-Красильникова А. Ш.</text>
+</svg>

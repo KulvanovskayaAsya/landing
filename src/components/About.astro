@@ -1,0 +1,68 @@
+---
+import { site } from '../data/site'
+
+const blocks = [
+	{
+		title: 'Медицинское образование',
+		text: 'Высшее медицинское образование и клиническая специализация формируют основу для точной оценки состояния и ответственной работы с психическими процессами.',
+	},
+	{
+		title: 'Психотерапевтическая практика',
+		text: 'Работаю в гештальт-подходе с опорой на клиническое мышление. Сопровождаю людей в сложных состояниях, кризисах и длительных внутренних процессах.',
+	},
+	{
+		title: 'Непрерывное обучение',
+		text: 'Регулярно углубляю квалификацию: супервизия, личная терапия и специализированные программы — часть профессиональной этики и качества практики.',
+	},
+]
+---
+
+<section
+	id="about"
+	class="section-space bg-[var(--color-surface)]"
+	aria-labelledby="about-heading"
+>
+	<div class="container-narrow">
+		<div class="grid items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+			<figure class="mx-auto w-full max-w-md lg:mx-0 lg:sticky lg:top-24">
+				<div class="overflow-hidden rounded-[1.25rem] bg-[var(--color-bg)]">
+					<img
+						src="/images/portraits/about.svg"
+						alt={`Профессиональный портрет — ${site.name}`}
+						width="800"
+						height="1000"
+						class="aspect-[4/5] h-auto w-full object-cover"
+						loading="lazy"
+						decoding="async"
+					/>
+				</div>
+			</figure>
+
+			<div>
+				<header>
+					<h2 id="about-heading" class="section-title">Обо мне</h2>
+					<p class="section-lead">
+						Я совмещаю медицинскую подготовку и психотерапевтическую
+						практику, чтобы создавать пространство безопасности,
+						ясности и глубины.
+					</p>
+				</header>
+
+				<div class="mt-10 space-y-8">
+					{
+						blocks.map((block) => (
+							<article class="border-t border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] pt-8">
+								<h3 class="font-display text-2xl text-[var(--color-text)]">
+									{block.title}
+								</h3>
+								<p class="mt-3 max-w-[38rem] text-[1.0125rem] leading-relaxed text-[var(--color-muted)]">
+									{block.text}
+								</p>
+							</article>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
