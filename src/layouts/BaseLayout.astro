@@ -13,7 +13,7 @@ const {
 } = Astro.props
 
 const canonical = new URL(Astro.url.pathname, site.url).toString()
-const ogImage = new URL('/images/portraits/hero.svg', site.url).toString()
+const ogImage = new URL('/images/portraits/hero.jpg', site.url).toString()
 
 const jsonLd = [
 	{
