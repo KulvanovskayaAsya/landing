@@ -33,7 +33,7 @@ const items = [
 	aria-labelledby="trust-heading"
 >
 	<div class="container-narrow">
-		<header class="max-w-2xl">
+		<header class="max-w-2xl" data-reveal>
 			<h2 id="trust-heading" class="section-title">
 				Основа профессионального подхода
 			</h2>
@@ -44,12 +44,15 @@ const items = [
 		</header>
 
 		<ul
-			class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+			class="reveal-stagger mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
 			role="list"
 		>
 			{
 				items.map((item) => (
-					<li class="rounded-[var(--radius-soft)] border border-[color-mix(in_srgb,var(--color-text)_8%,transparent)] bg-[var(--color-bg)] p-7 transition-colors duration-300 hover:border-[color-mix(in_srgb,var(--color-accent)_45%,transparent)]">
+					<li
+						class="card-lift rounded-[var(--radius-soft)] border border-[color-mix(in_srgb,var(--color-text)_8%,transparent)] bg-[var(--color-bg)] p-7 hover:border-[color-mix(in_srgb,var(--color-accent)_45%,transparent)]"
+						data-reveal
+					>
 						<div
 							class="mb-5 h-px w-10 bg-[var(--color-accent)]"
 							aria-hidden="true"

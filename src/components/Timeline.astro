@@ -8,7 +8,7 @@ import { education } from '../data/education'
 	aria-labelledby="education-heading"
 >
 	<div class="container-narrow">
-		<header class="max-w-2xl">
+		<header class="max-w-2xl" data-reveal>
 			<h2 id="education-heading" class="section-title">
 				Образование и квалификация
 			</h2>
@@ -17,10 +17,16 @@ import { education } from '../data/education'
 			</p>
 		</header>
 
-		<ol class="relative mt-14 space-y-0" aria-label="Хронология образования">
+		<ol
+			class="relative mt-14 space-y-0"
+			aria-label="Хронология образования"
+		>
 			{
 				education.map((item) => (
-					<li class="relative grid gap-4 border-t border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] py-8 md:grid-cols-[10rem_1fr] md:gap-10 lg:grid-cols-[12rem_1fr]">
+					<li
+						class="relative grid gap-4 border-t border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] py-8 md:grid-cols-[10rem_1fr] md:gap-10 lg:grid-cols-[12rem_1fr]"
+						data-reveal
+					>
 						<div class="flex items-start gap-4 md:block">
 							<span
 								class="mt-2 inline-flex h-2.5 w-2.5 shrink-0 rounded-full bg-[var(--color-accent)] md:absolute md:left-0 md:mt-2 md:hidden"

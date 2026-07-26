@@ -8,17 +8,19 @@ import { faq } from '../data/faq'
 	aria-labelledby="faq-heading"
 >
 	<div class="container-narrow">
-		<header class="max-w-2xl">
+		<header class="mx-auto max-w-2xl text-center" data-reveal>
 			<h2 id="faq-heading" class="section-title">Частые вопросы</h2>
-			<p class="section-lead">
+			<p class="section-lead mx-auto">
 				Ответы на вопросы, которые обычно возникают перед началом работы.
 			</p>
 		</header>
 
-		<div class="mx-auto mt-12 max-w-3xl divide-y divide-[color-mix(in_srgb,var(--color-text)_10%,transparent)] border-y border-[color-mix(in_srgb,var(--color-text)_10%,transparent)]">
+		<div
+			class="mx-auto mt-12 max-w-3xl divide-y divide-[color-mix(in_srgb,var(--color-text)_10%,transparent)] border-y border-[color-mix(in_srgb,var(--color-text)_10%,transparent)]"
+		>
 			{
 				faq.map((item) => (
-					<details class="group py-1">
+					<details class="group py-1" data-reveal>
 						<summary class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left marker:content-none [&::-webkit-details-marker]:hidden">
 							<span class="font-display text-xl text-[var(--color-text)] md:text-2xl">
 								{item.question}
@@ -43,7 +45,7 @@ import { faq } from '../data/faq'
 								</svg>
 							</span>
 						</summary>
-						<p class="pb-6 pr-12 text-[1.0125rem] leading-relaxed text-[var(--color-muted)]">
+						<p class="faq-answer pb-6 pr-12 text-[1.0125rem] leading-relaxed text-[var(--color-muted)]">
 							{item.answer}
 						</p>
 					</details>

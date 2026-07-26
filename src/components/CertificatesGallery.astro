@@ -8,7 +8,7 @@ import { certificates } from '../data/certificates'
 	aria-labelledby="certificates-heading"
 >
 	<div class="container-narrow">
-		<header class="max-w-2xl">
+		<header class="max-w-2xl" data-reveal>
 			<h2 id="certificates-heading" class="section-title">
 				Дипломы и сертификаты
 			</h2>
@@ -20,14 +20,15 @@ import { certificates } from '../data/certificates'
 
 		<div
 			id="certificates-gallery"
-			class="mt-12 columns-2 gap-3 md:columns-3 md:gap-4 lg:columns-4"
+			class="reveal-stagger mt-12 columns-2 gap-3 md:columns-3 md:gap-4 lg:columns-4"
 			role="list"
 		>
 			{
 				certificates.map((item) => (
 					<a
 						href={item.src}
-						class="group mb-3 block break-inside-avoid overflow-hidden rounded-[var(--radius-soft)] bg-[var(--color-bg)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-dark)] md:mb-4"
+						class="media-zoom group mb-3 block break-inside-avoid overflow-hidden rounded-[var(--radius-soft)] bg-[var(--color-bg)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-dark)] md:mb-4"
+						data-reveal
 						data-pswp-width={item.width}
 						data-pswp-height={item.height}
 						data-cropped="false"
@@ -39,7 +40,7 @@ import { certificates } from '../data/certificates'
 							alt={item.alt}
 							width={item.width}
 							height={item.height}
-							class="h-auto w-full object-cover transition duration-300 group-hover:opacity-90"
+							class="h-auto w-full object-cover"
 							loading="lazy"
 							decoding="async"
 						/>

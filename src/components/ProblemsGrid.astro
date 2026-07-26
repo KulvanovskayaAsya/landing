@@ -8,7 +8,7 @@ import { problems } from '../data/problems'
 	aria-labelledby="problems-heading"
 >
 	<div class="container-narrow">
-		<header class="max-w-2xl">
+		<header class="max-w-2xl" data-reveal>
 			<h2 id="problems-heading" class="section-title">
 				Запросы, с которыми я работаю
 			</h2>
@@ -19,12 +19,15 @@ import { problems } from '../data/problems'
 		</header>
 
 		<ul
-			class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+			class="reveal-stagger mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
 			role="list"
 		>
 			{
 				problems.map((item) => (
-					<li class="flex h-full flex-col rounded-[var(--radius-soft)] bg-[var(--color-surface)] p-6 md:p-7">
+					<li
+						class="card-lift flex h-full flex-col rounded-[var(--radius-soft)] bg-[var(--color-surface)] p-6 md:p-7"
+						data-reveal
+					>
 						<h3 class="font-display text-xl text-[var(--color-text)]">
 							{item.title}
 						</h3>

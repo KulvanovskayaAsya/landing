@@ -27,7 +27,7 @@ const formats = [
 	aria-labelledby="formats-heading"
 >
 	<div class="container-narrow">
-		<header class="max-w-2xl">
+		<header class="max-w-2xl" data-reveal>
 			<h2 id="formats-heading" class="section-title">Форматы работы</h2>
 			<p class="section-lead">
 				Формат подбирается совместно — исходя из запроса, состояния
@@ -35,10 +35,13 @@ const formats = [
 			</p>
 		</header>
 
-		<ul class="mt-12 grid gap-5 lg:grid-cols-3" role="list">
+		<ul class="reveal-stagger mt-12 grid gap-5 lg:grid-cols-3" role="list">
 			{
 				formats.map((item) => (
-					<li class="flex h-full flex-col rounded-[1rem] border border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] bg-[var(--color-bg)] p-8">
+					<li
+						class="card-lift flex h-full flex-col rounded-[1rem] border border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] bg-[var(--color-bg)] p-8"
+						data-reveal
+					>
 						<p class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--color-accent-dark)]">
 							{item.duration}
 						</p>

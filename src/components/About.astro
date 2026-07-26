@@ -24,8 +24,11 @@ const blocks = [
 >
 	<div class="container-narrow">
 		<div class="grid items-start gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
-			<figure class="mx-auto w-full max-w-md lg:mx-0 lg:sticky lg:top-24">
-				<div class="overflow-hidden rounded-[1.25rem] bg-[var(--color-bg)]">
+			<figure
+				class="mx-auto w-full max-w-md lg:mx-0 lg:sticky lg:top-24"
+				data-reveal="left"
+			>
+				<div class="media-zoom overflow-hidden rounded-[1.25rem] bg-[var(--color-bg)]">
 					<img
 						src="/images/portraits/about.jpg"
 						alt={`Профессиональный портрет — ${site.name}`}
@@ -39,7 +42,7 @@ const blocks = [
 			</figure>
 
 			<div>
-				<header>
+				<header data-reveal>
 					<h2 id="about-heading" class="section-title">Обо мне</h2>
 					<p class="section-lead">
 						Я совмещаю медицинскую подготовку и психотерапевтическую
@@ -48,10 +51,13 @@ const blocks = [
 					</p>
 				</header>
 
-				<div class="mt-10 space-y-8">
+				<div class="reveal-stagger mt-10 space-y-8">
 					{
 						blocks.map((block) => (
-							<article class="border-t border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] pt-8">
+							<article
+								class="border-t border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] pt-8"
+								data-reveal
+							>
 								<h3 class="font-display text-2xl text-[var(--color-text)]">
 									{block.title}
 								</h3>
