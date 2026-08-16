@@ -25,27 +25,33 @@ import { certificates } from '../data/certificates'
 		>
 			{
 				certificates.map((item) => (
-					<a
-						href={item.src}
-						class="media-zoom group mb-3 block break-inside-avoid overflow-hidden rounded-[var(--radius-soft)] bg-[var(--color-bg)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-dark)] md:mb-4"
+					<figure
+						class="mb-5 break-inside-avoid md:mb-6"
 						data-reveal
-						data-pswp-width={item.width}
-						data-pswp-height={item.height}
-						data-cropped="false"
 						role="listitem"
-						aria-label={`Открыть: ${item.title}`}
 					>
-						<img
-							src={item.src}
-							alt={item.alt}
-							width={item.width}
-							height={item.height}
-							class="h-auto w-full object-cover"
-							loading="lazy"
-							decoding="async"
-						/>
-						<span class="sr-only">{item.title}</span>
-					</a>
+						<a
+							href={item.src}
+							class="media-zoom group block overflow-hidden rounded-[var(--radius-soft)] bg-[var(--color-bg)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-accent-dark)]"
+							data-pswp-width={item.width}
+							data-pswp-height={item.height}
+							data-cropped="false"
+							aria-label={`Открыть: ${item.title}`}
+						>
+							<img
+								src={item.src}
+								alt={item.alt}
+								width={item.width}
+								height={item.height}
+								class="h-auto w-full object-cover"
+								loading="lazy"
+								decoding="async"
+							/>
+						</a>
+						<figcaption class="mt-2.5 px-0.5 text-[0.8125rem] leading-snug text-[var(--color-muted)] md:text-sm">
+							{item.title}
+						</figcaption>
+					</figure>
 				))
 			}
 		</div>
@@ -67,6 +73,19 @@ import { certificates } from '../data/certificates'
 	.pswp__button--arrow--next {
 		color: #f7f5f1;
 	}
+
+	.pswp__custom-caption {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		padding: 0.875rem 1.25rem 1.25rem;
+		background: rgb(43 43 43 / 0.92);
+		color: #f7f5f1;
+		font-size: 0.9375rem;
+		line-height: 1.4;
+		text-align: center;
+	}
 </style>
 
 <script>
@@ -82,9 +101,27 @@ import { certificates } from '../data/certificates'
 			children: 'a',
 			pswpModule: () => import('photoswipe'),
 			preload: [1, 2],
-			padding: { top: 24, bottom: 24, left: 16, right: 16 },
+			padding: { top: 24, bottom: 56, left: 16, right: 16 },
 			bgOpacity: 0.92,
 			wheelToZoom: true,
+		})
+
+		lightbox.on('uiRegister', () => {
+			lightbox.pswp?.ui?.registerElement({
+				name: 'custom-caption',
+				order: 9,
+				isButton: false,
+				appendTo: 'root',
+				html: '',
+				onInit: (el) => {
+					lightbox.pswp?.on('change', () => {
+						const slideEl = lightbox.pswp?.currSlide?.data.element
+						const caption =
+							slideEl?.querySelector('img')?.getAttribute('alt') ?? ''
+						el.textContent = caption
+					})
+				},
+			})
 		})
 
 		lightbox.init()

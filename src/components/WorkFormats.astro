@@ -2,15 +2,21 @@
 const formats = [
 	{
 		title: 'Консультация',
-		duration: '1–5 встреч',
+		duration: 'Однократная встреча',
 		description:
 			'Для прояснения ситуации, первичной поддержки и понимания следующего шага.',
 	},
 	{
 		title: 'Краткосрочное консультирование',
-		duration: '10–20 встреч',
+		duration: '1–15 встреч',
 		description:
 			'Сфокусированная работа с конкретным запросом и устойчивыми изменениями в повседневной жизни.',
+	},
+	{
+		title: 'Среднесрочное консультирование',
+		duration: '15–30 встреч',
+		description:
+			'Работа с повторяющимися жизненными сценариями и осознанием внутренних причин, которые к ним приводят.',
 	},
 	{
 		title: 'Долгосрочная терапия',
@@ -35,7 +41,10 @@ const formats = [
 			</p>
 		</header>
 
-		<ul class="reveal-stagger mt-12 grid gap-5 lg:grid-cols-3" role="list">
+		<ul
+			class="reveal-stagger mt-12 grid gap-5 sm:grid-cols-2"
+			role="list"
+		>
 			{
 				formats.map((item) => (
 					<li

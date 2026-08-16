@@ -1,5 +1,5 @@
 ---
-import { problems } from '../data/problems'
+import { problems, problemNotes } from '../data/problems'
 ---
 
 <section
@@ -38,5 +38,27 @@ import { problems } from '../data/problems'
 				))
 			}
 		</ul>
+
+		<aside
+			class="mt-14 border-t border-[color-mix(in_srgb,var(--color-text)_10%,transparent)] pt-10"
+			aria-label="Уточнения по запросам"
+			data-reveal
+		>
+			<ul class="max-w-3xl space-y-7" role="list">
+				{
+					problemNotes.map((note) => (
+						<li class="flex gap-4">
+							<span
+								class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--color-accent)]"
+								aria-hidden="true"
+							/>
+							<p class="text-[0.975rem] leading-relaxed text-[var(--color-muted)]">
+								{note}
+							</p>
+						</li>
+					))
+				}
+			</ul>
+		</aside>
 	</div>
 </section>

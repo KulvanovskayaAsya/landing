@@ -2,13 +2,18 @@
 const prices = [
 	{
 		title: 'Индивидуальная консультация',
-		price: '150 BYN',
+		price: '120 BYN',
 		duration: '50 минут',
 	},
 	{
-		title: 'Групповая консультация',
-		price: '100 BYN',
-		duration: '50 минут',
+		title: 'Семейная консультация',
+		price: '150 BYN',
+		duration: '60 минут',
+	},
+	{
+		title: 'Групповой формат',
+		price: '90 BYN',
+		duration: 'За 1 встречу',
 	},
 ]
 ---
@@ -28,7 +33,7 @@ const prices = [
 		</header>
 
 		<ul
-			class="reveal-stagger mx-auto mt-12 grid max-w-3xl gap-5 md:grid-cols-2"
+			class="reveal-stagger mx-auto mt-12 grid max-w-5xl gap-5 md:grid-cols-3"
 			role="list"
 		>
 			{
@@ -48,9 +53,5 @@ const prices = [
 				))
 			}
 		</ul>
-
-		<p class="mt-8 text-center text-[0.975rem] text-[var(--color-muted)]" data-reveal>
-			Возможны персональные скидки.
-		</p>
 	</div>
 </section>
