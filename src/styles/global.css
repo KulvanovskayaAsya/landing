@@ -20,6 +20,7 @@
 @layer base {
 	html {
 		scroll-behavior: smooth;
+		scroll-padding-top: 5rem;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 		text-rendering: optimizeLegibility;
@@ -353,6 +354,10 @@
 
 		details[open] .faq-answer {
 			animation: none;
+		}
+
+		.site-header__burger-lines span {
+			transition: none;
 		}
 	}
 }
